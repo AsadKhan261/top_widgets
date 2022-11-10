@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:top_widgets/drawer_example.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: HomeScreen(),
+      home: DrawerExample(),
     );
   }
 }
@@ -188,23 +189,33 @@ class HomeScreen extends StatelessWidget {
           //   );
           // }))
           ///richTextCodeHere
-          Center(
-            child: RichText(
-              text: const TextSpan(
-                text: 'Already have ',
-                style: TextStyle(
-                  color: Colors.red,
-                  fontWeight: FontWeight.w900,
-                  fontSize: 18,
-                ),
-                children: [
-                  TextSpan(text: 'an account',style: TextStyle(
-                    color: Colors.blue,fontSize: 20,fontWeight: FontWeight.w400
-                  )),
-                  TextSpan(text: 'Login',style: TextStyle(
-                      color: Colors.green,fontSize: 20,fontWeight: FontWeight.w400
-                  )),
-                ]
+          GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Center(
+              child: RichText(
+                text: const TextSpan(
+                    text: 'Already have ',
+                    style: TextStyle(
+                      color: Colors.red,
+                      fontWeight: FontWeight.w900,
+                      fontSize: 18,
+                    ),
+                    children: [
+                      TextSpan(
+                          text: 'an account',
+                          style: TextStyle(
+                              color: Colors.blue,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w400)),
+                      TextSpan(
+                          text: 'Login',
+                          style: TextStyle(
+                              color: Colors.green,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w400)),
+                    ]),
               ),
             ),
           )
